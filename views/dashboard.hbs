@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>UptimeX - Website Monitoring</title>
+  <meta content="" name="description">
+
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: FlexStart - v1.7.0
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .loader_parent {
+      display: none;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 1111111;
+      pointer-events: none;
+    }
+
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      font-weight: bold;
+      color: black
+    }
+
+    .loader_parent.blurred {
+      display: block;
+    }
+
+    .blurred~* {
+      filter: blur(3px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loader_parent" id="loader_parent">
+    <div class="loader" id="loader">
+      <div class="spinner-border"></div>
+      <span id="spinnername">Loading...</span>
+    </div>
+  </div>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span>UptimeX</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">My Monitors</a></li>
+          <li><a class="nav-link scrollto " href="/logout">Log Out</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          {{#if messages.info}}
+          <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            {{messages.info}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {{/if}}
+          <h1 data-aos="fade-up">The world's leading
+            uptime monitoring service.</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">Get Unlimited monitors with 5-minute checks totally FREE.</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="text-center text-lg-start">
+              <a type="button"
+                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <span>Create New Monitor<i class="bi bi-plus"></i></span>
+              </a>
+
+              <script>
+                function blurMe() {
+                  let spinner = document.querySelector("#loader_parent")
+                  if (spinner.classList.contains("blurred")) {
+                    spinner.classList.remove("blurred");
+                    var all = document.querySelectorAll('button');
+                    var alla = document.querySelectorAll('a');
+                    for (var i = 0, len = all.length; i < len; i++) {
+                      all[i].disabled = false;
+                    }
+                    for (var i = 0, len = alla.length; i < len; i++) {
+                      alla[i].style.pointerEvents = "auto";
+                      alla[i].style.cursor = "pointer";
+                    }
+                  } else {
+                    spinner.classList.add("blurred")
+                    var all = document.querySelectorAll('button');
+                    var alla = document.querySelectorAll('a');
+                    for (var i = 0, len = all.length; i < len; i++) {
+                      all[i].disabled = true;
+                    }
+                    for (var i = 0, len = alla.length; i < len; i++) {
+                      alla[i].style.pointerEvents = "none";
+                      alla[i].style.cursor = "default";
+                    }
+                  }
+                };
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="/test1.png" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Creating A New Monitor For You</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="name1" class="form-label"></label>
+              <input type="text" class="form-control" name="name1" id="name1" aria-describedby="helpId"
+                placeholder="Enter The Name OF The Monitor">
+            </div>
+            <div class="mb-3">
+              <label for="url1" class="form-label"></label>
+              <input type="url" class="form-control" name="url1" id="url1" aria-describedby="helpId"
+                placeholder="Enter The URL">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" onclick="t1();" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var HOST = location.origin.replace(/^http/, 'ws')
+      let socket = new WebSocket(`${HOST}/dashboard`);
+      socket.onmessage = function (message) {
+        let data = JSON.parse(message.data);
+        document.getElementById("spinnername").innerHTML = data.msg
+      };
+      function t1() {
+        document.getElementById("spinnername").innerHTML = "Sending Request"
+        socket.send(JSON.stringify({
+          type: "progress",
+        }));
+        blurMe();
+        $.ajax({
+          type: "POST",
+          url: '/monitor',
+          data: {
+            'name1': document.getElementById('name1').value,
+            'url1': document.getElementById('url1').value
+          },
+          success: function (response) {
+            setTimeout(() => {
+              blurMe();
+              console.log("response")
+              window.location.reload();
+            }, 1000)
+          },
+          error: function (error) {
+            console.log("Error")
+          }
+        })
+      };
+    </script>
+  </section><!-- End Hero -->
+  <section id="portfolio" class="portfolio">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <h2>My Monitors</h2>
+      </header>
+      {{#if monitors}}
+      {{#each monitors}}
+      <div class="container">
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="col-md-3">
+            <input class="form-control" id="{{this.id}}name" name="firstname" type="text" value="{{this.name}}" />
+          </div>
+          <div class="col-md-3">
+            <input class="form-control" id="{{this.id}}url" name="lastname" type="text" value="{{this.url}}" />
+          </div>
+          <div class="col-md-3">
+            <input class="form-control" id="{{this.id}}email" name="lastname" type="text" value="{{this.email}}" />
+          </div>
+          <div class="col-md-3">
+            {{#if this.isblock}}
+            <button type="submit" name="myunblockbtn" id="myunblockbtn" class="btn btn-outline-primary"
+              onclick="change_status({{this.id}})">Unblock</button>
+            {{else}}
+            <button type="button" name="mydeletebtn" id="mydeletebtn" class="btn btn-outline-primary"
+              onclick="del({{this.id}})">Delete</button>
+            <button type="button" name="mydeletebtn" id="mydeletebtn" class="btn btn-outline-primary ms-2"
+              onclick="save({{this.id}})">Save</button>
+            {{/if}}
+          </div>
+        </form>
+      </div>
+      <br>
+      {{/each}}
+      {{/if}}
+    </div>
+  </section><!-- End Portfolio Section -->
+
+  <script>
+    function del(id) {
+      $.ajax({
+        type: "DELETE",
+        url: '/monitor',
+        data: { 'data': id },
+        success: function (response) {
+          window.location.reload();
+        },
+        error: function (error) {
+          console.log("Error")
+        }
+      })
+    }
+    function change_status(id) {
+      $.ajax({
+        type: "PUT",
+        url: '/monitor',
+        data: { 'data': id },
+        success: function (response) {
+          window.location.reload();
+        },
+        error: function (error) {
+          console.log("Error")
+        }
+      })
+    }
+    function save(id) {
+      document.getElementById("spinnername").innerHTML = "Sending Request"
+      socket.send(JSON.stringify({
+        type: "progress",
+      }));
+      blurMe();
+      $.ajax({
+        type: "POST",
+        url: '/monitor/edit',
+        data: {
+          'id': id,
+          'name': document.getElementById(`${id}name`).value,
+          'url': document.getElementById(`${id}url`).value,
+          'email': document.getElementById(`${id}email`).value
+        },
+        success: function (response) {
+          setTimeout(() => {
+            blurMe();
+            console.log("response")
+            window.location.reload();
+          }, 1000)
+        },
+        error: function (error) {
+          console.log("Error")
+        }
+      })
+    }
+  </script>
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="/" class="logo d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="">
+              <span>UptimeX</span>
+            </a>
+            <p>The world's leading uptime monitoring service.
+              Get Unlimited monitors with 5-minute checks totally FREE.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/AdhikariSalman?t=RxCEcOAXyNev9pp2-HWnxQ&s=09" class="twitter"><i
+                  class="bi bi-twitter"></i></a>
+              <a href="https://github.com/YourDad07" class="facebook"><i class="bi bi-github"></i></a>
+              <a href="https://www.linkedin.com/in/salman-adhikari-a938911bb" class="linkedin"><i
+                  class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">My Monitors</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/logout">Log Out</a></li>
+
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contact Us</h4>
+            <p>
+              Kharghar Sector 35<br>
+              Maharashtra,410210<br>
+              India <br><br>
+              <strong>Phone:</strong> +91 22 3562 0170<br>
+              <strong>Email:</strong> salmanad5s3@gmail.com<br>
+            </p>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>@salman</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.6/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.6/dist/js/uikit-icons.min.js"></script>
+</body>
+
+</html>
