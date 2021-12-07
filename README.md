@@ -1,7 +1,7 @@
 # UptimeX
 
 <center>
-<img src="images/logo.png" alt="Logo">
+<img src="Images/logo.png" alt="Logo">
 </center>
 <br>
 <h1>Link : https://uptimex.herokuapp.com/ <br>
@@ -27,7 +27,7 @@ The world's leading uptime monitoring service.Get Unlimited monitors with 5-minu
 - After Adding Successfully You Can See the Monitor Below
 <br>
 <br>
-<img src="Images/Wheretosee.png" alt="Where To See">
+<img src="Images/WhereToSee.png" alt="Where To See">
 <br>
 <br>
 <h2>What If The Monitor Fail</h2>
@@ -52,7 +52,7 @@ The world's leading uptime monitoring service.Get Unlimited monitors with 5-minu
 
 - You Need To Click On The Unblock Button For Starting Monitoring Again
 
-<img src="Images/unblock.png" alt="Unblock">
+<img src="Images/Unblock.png" alt="Unblock">
 <br>
 
 - Note If Your Web Does Not Have The Email Then It'll Take notfound@gmail.com As A Default Mail
