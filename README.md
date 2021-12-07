@@ -1,8 +1,8 @@
 # UptimeX
 
-<center>
+<p align="center">
 <img src="Images/logo.png" alt="Logo">
-</center>
+</p>
 <br>
 <h1>Link : https://uptimex.herokuapp.com/ <br>
 The world's leading uptime monitoring service.Get Unlimited monitors with 5-minute checks totally FREE.</h1>
