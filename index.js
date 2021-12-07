@@ -21,7 +21,6 @@ app.use(express.json())
 app.set('view engine', 'hbs');
 app.use(cors());
 app.use(session({
-  cookie: { maxAge: 60000 },
   secret: process.env.JWT_ACC_ACTIVATE,
   resave: false,
   saveUninitialized: false
