@@ -1,4 +1,11 @@
 # UptimeX
+[![Nodejs](https://img.shields.io/badge/Nodejs-14.17.6-blue)](https://nodejs.org/en/)
+[![Express](https://img.shields.io/badge/Express-4.17.1-blue)](https://expressjs.com/)
+[![Websockets](https://img.shields.io/badge/WebSocket-8.2.3-blue)](https://www.npmjs.com/package/ws)
+[![npm](https://img.shields.io/badge/npm-6.14.15-blue)](https://docs.npmjs.com/about-npm)
+[![PostgreSQL](https://img.shields.io/badge/pg-8.7.1-blue)](https://www.npmjs.com/package/pg)
+[![Heroku](https://img.shields.io/badge/Heroku-Hosting-blue)](https://www.heroku.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap%20-5-blue)](https://getbootstrap.com/)
 
 <p align="center">
 <img src="Images/logo.png" alt="Logo">
