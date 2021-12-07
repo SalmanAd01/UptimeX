@@ -4,8 +4,10 @@
 <img src="Images/logo.png" alt="Logo">
 </p>
 <br>
-<h1>Link : https://uptimex.herokuapp.com/ <br>
-The world's leading uptime monitoring service.Get Unlimited monitors with 5-minute checks totally FREE.</h1>
+
+- Link : https://uptimex.herokuapp.com/ 
+
+<h1>The world's leading uptime monitoring service.Get Unlimited monitors with 5-minute checks totally FREE.</h1>
 <h2>How It Works</h2>
 
 - You Need To Provide the URL Of The Website For Which You Wanted To Monitor
