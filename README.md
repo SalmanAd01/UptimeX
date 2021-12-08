@@ -21,7 +21,7 @@
 - It'll Send The Request To Check If the URL That You Have Enter Is Exsist/Correct.
 - If It's Exsist Then it'll Scrapp the Email From That Website
 - And Will Do The Monitoring After 5 Minutes And For Email It's 30m
-- If Any Of The Two Is Fail It'll Notified You By Sending the Mail And Will Block The Monitor Also
+- If Any Of The One Is Fail It'll Notified You By Sending the Mail And Will Block The Monitor Also
 - You Just Need to Login and Click the Unblock Button For Starting Monitoring Again
 
 <h2>Here Is The Full Tutorial For It</h2>
