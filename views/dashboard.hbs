@@ -285,7 +285,11 @@
           window.location.reload();
         },
         error: function (error) {
-          console.log("Error")
+          document.getElementById("spinnername").innerHTML = "Error Occured"
+          setTimeout(() => {
+            blurMe();
+            window.location.reload();
+          }, 500)
         }
       })
     }
