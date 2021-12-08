@@ -208,12 +208,15 @@
           success: function (response) {
             setTimeout(() => {
               blurMe();
-              console.log("response")
               window.location.reload();
             }, 1000)
           },
           error: function (error) {
-            console.log("Error")
+            document.getElementById("spinnername").innerHTML = "Error Occured"
+            setTimeout(() => {
+              blurMe();
+              window.location.reload();
+            }, 500)
           }
         })
       };
